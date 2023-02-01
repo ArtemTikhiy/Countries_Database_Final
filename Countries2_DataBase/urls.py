@@ -19,8 +19,7 @@ from MainApp import views
 
 urlpatterns = [
     path('', views.main),
-    path('country_list/<int:page_number>', views.all_countries),
-    path('country_list/<str:page_number>', views.all_countries),
+    path('country_list/', views.all_countries),
     path('languages/all', views.languages),
     path('<str:country>', views.country_page),
     path('letter/<str:letter>', views.countries_by_letter),

@@ -35,7 +35,7 @@
  text-align: center;
  }
 
- div {
+ .page-links {
  text-align: center;
  margin: auto;
  font-size: 30px;
@@ -61,16 +61,16 @@
 
 <ol>
     {%for item in page.object_list %}
-        <li><a href="/{{ item }}">{{ item }}</a></li>
+        <li><a href="/{{ item.country }}">{{ item.country }}</a></li>
     {% endfor %}
 </ol>
 
-    <div>
+    <div class ="page-links">
         {% if page.has_previous %}
-        <a href="/country_list/{{ page.previous_page_number }}">Previous Page</a>
+        <a href="/country_list/?page={{ page.previous_page_number }}">Предыдущая страница</a>
         {% endif %}
         {% if page.has_next %}
-        <a href="/country_list/{{ page.next_page_number }}">Next Page</a>
+        <a href="/country_list/?page={{ page.next_page_number }}">Следующая страница</a>
         {% endif %}
     </div>
 
