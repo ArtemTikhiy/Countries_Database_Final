@@ -1,0 +1,5 @@
+.idea/
+*.pyc
+*_venv/
+*_venv
+db.*
