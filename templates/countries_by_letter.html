@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Страны, начинающиеся на букву {{letter_valid}}</title>
+<style>
+
+ h1 {
+ font-size: 50px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+ ol {
+ font-size: 30px;
+ font-weight: normal;
+ text-align: left;
+ margin-left: 20px;
+ }
+
+ p {
+ font-size: 40px;
+ font-weight: normal;
+ text-align: center;
+ }
+</style>
+</head>
+<body>
+
+<h1>Список стран на букву {{letter_valid}}</h1>
+
+{% if  temporary %}
+    <ol>
+        {% for item in temporary %}
+            <li><a href ="/{{item}}">{{item}}</a></li>
+        {% endfor %}
+    </ol>
+{% else %}
+    <p>Стран, начинающихся на букву {{letter_valid}} не существует</p>
+{% endif %}
+
+
+
+<p><a href="/country_list/1">К списку стран</a></p>
+
+</body>
+</html>

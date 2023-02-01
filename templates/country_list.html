@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список стран</title>
+<style>
+ h1 {
+ font-size: 50px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+ h2 {
+ font-size: 40px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+ ol {
+ font-size: 30px;
+ font-weight: normal;
+ text-align: left;
+ margin-left: 20px;
+ }
+
+ nav {
+ font-size: 20px;
+ font-weight: 500;
+ text-align: center;
+ }
+
+ #under_nav {
+ font-size: 30px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+ div {
+ text-align: center;
+ margin: auto;
+ font-size: 30px;
+ }
+</style>
+</head>
+<body>
+<nav>
+{% for char in alphabet %}
+    {% if  char != 'Z' %}
+        <a href="/letter/{{char}}"> {{ char }}</a> -
+    {% else %}
+        <a href="/letter/{{char}}"> {{ char }}</a>
+    {% endif %}
+{% endfor %}
+<br>
+<br>
+<a href='/languages/all' id="under_nav">Языки</a>
+</nav>
+
+<h1>Список стран <br> Количество стран - {{ count }} </h1>
+<h2>Текущая страница: {{ page.number }}</h2>
+
+<ol>
+    {%for item in page.object_list %}
+        <li><a href="/{{ item }}">{{ item }}</a></li>
+    {% endfor %}
+</ol>
+
+    <div>
+        {% if page.has_previous %}
+        <a href="/country_list/{{ page.previous_page_number }}">Previous Page</a>
+        {% endif %}
+        {% if page.has_next %}
+        <a href="/country_list/{{ page.next_page_number }}">Next Page</a>
+        {% endif %}
+    </div>
+
+</body>
+</html>

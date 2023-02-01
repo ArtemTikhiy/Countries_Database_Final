@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{page_title}}</title>
+<style>
+ h1 {
+ font-size: 50px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+ ul {
+ font-size: 30px;
+ font-weight: normal;
+ text-align: left;
+ margin-left: 20px;
+ }
+
+ #under_h1 {
+ font-size: 30px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+ p {
+ font-size: 40px;
+ font-weight: normal;
+ text-align: center;
+ }
+</style>
+
+</head>
+<body>
+<h1>{{ item.country }}</h1>
+<p id="under_h1">Языки, используемые в данной стране:</p>
+<ul>
+{% for item in item.languages %}
+    <li><a href="/language/{{ item }}">{{ item }}</a></li>
+{% endfor %}
+</ul>
+<p><a href="/country_list/1">К списку стран</a></p>
+</body>
+</html>

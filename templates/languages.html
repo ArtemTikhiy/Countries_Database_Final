@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список всех языков</title>
+<style>
+
+ h1 {
+ font-size: 50px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+ ul {
+ font-size: 25px;
+ font-weight: normal;
+ text-align: left;
+ margin-left: 20px;
+ }
+
+ p {
+ font-size: 30px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+</style>
+
+</head>
+<body>
+<h1>Список всех языков</h1>
+
+<ul>
+{% for item in temporary2 %}
+    <li><a href="/language/{{ item }}">{{ item }}</a></li>
+{% endfor %}
+</ul>
+
+<p><a href="/country_list/1">К списку стран</a></p>
+</body>
+</html>

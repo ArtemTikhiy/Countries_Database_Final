@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{page_title}}</title>
+
+<style>
+
+ h1 {
+ font-size: 50px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+ ul {
+ font-size: 25px;
+ font-weight: normal;
+ text-align: left;
+ margin-left: 20px;
+ }
+
+ p {
+ font-size: 30px;
+ font-weight: normal;
+ text-align: center;
+ }
+
+</style>
+
+</head>
+<body>
+<h1>Список стран, где используется {{page_title}}</h1>
+
+{% if  temporary %}
+    <ul>
+        {% for item in temporary %}
+            <li><a href ="/{{item}}">{{item}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Языка {{page_title}} не существует</p>
+{% endif %}
+
+<p><a href="/languages/all">К списку всех языков</a></p>
+
+</body>
+</html>
