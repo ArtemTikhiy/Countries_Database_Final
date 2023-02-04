@@ -50,6 +50,8 @@ def countries_by_letter(request, letter):
     items = Country.objects.all()
     letter_valid = letter.upper()
     temporary = []
+    # TODO: вы реализовали фильтрацию объектов на уровне питона, нужно реализовать на уровне БД.
+    #  Подробнее тут: https://tutorial.djangogirls.org/ru/django_orm/#%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2
     for item in items:
         if item.country[0] == letter_valid:
             temporary.append(item.country)
@@ -77,6 +79,7 @@ def language_one(request, language):
     temporary = []
     language_valid = language[0].upper() + language[1::]
     page_title = language_valid
+    # TODO: тут тоже самое, фильтрацию объектов делаем на уровне БД
     for item in items:
         if language_valid in item.languages:
             temporary.append(item.country)
